@@ -179,7 +179,9 @@ The small variance between the **multi-xPU** and **single-xPU** outputs (normali
 We developed a script for benchmarking experiments (`diffusion_2D_perf_multixpu_benchmarking.jl`), along with `run_strong_scaling.jl` to execute the benchmarking process.
 
 The strong scaling scheme measures the **effective memory throughput ($T_{\text{eff}}$)** for grid sizes 
+
 $$nx = ny = 16 \times 2^k, \quad k \in [1, 8]$$ 
+
 as the problem size is fixed and computational resources (xPUs) increase. Ideally, the expected performance is a linear increase in $T_{\text{eff}}$ as more xPUs are added, assuming minimal overhead and perfect load balancing during parallel execution.
 
 
@@ -219,7 +221,11 @@ The effective memory throughput $T_{\text{eff}}$ improves significantly with inc
 
 We developed the script `diffusion_2D_perf_multixpu_weak_scaling.jl` for benchmarking experiments and created `run_weak_scaling.jl` to perform the benchmarking process.
 
-The weak scaling scheme measures the **normalized execution time** as the problem size per process is held constant while the number of processes ($np$) increases. For each process count, the total grid size is scaled proportionally to maintain a constant workload per xPU, with grid dimensions given by $$nx = ny = 64 \times \sqrt{np}, \quad np \in \{1, 4, 16, 25, 50\}.$$ Ideally, the normalized execution time should remain constant as $np$ increases, reflecting perfect scalability with minimal communication overhead and efficient parallel execution.
+The weak scaling scheme measures the **normalized execution time** as the problem size per process is held constant while the number of processes ($np$) increases. For each process count, the total grid size is scaled proportionally to maintain a constant workload per xPU, with grid dimensions given by 
+
+$$nx = ny = 64 \times \sqrt{np}, \quad np \in \{1, 4, 16, 25, 50\}.$$
+
+Ideally, the normalized execution time should remain constant as $np$ increases, reflecting perfect scalability with minimal communication overhead and efficient parallel execution.
 
 We ran the script using the following command:
 ```
