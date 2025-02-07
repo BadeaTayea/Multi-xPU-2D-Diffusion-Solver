@@ -141,7 +141,7 @@ The values for each run were saved in the files `C_output_gpu_true.jld2` and `C_
 
 To demonstrate the performance and scalability differences between **single-GPU** (using `l8_diffusion_2D_perf_xpu.jl`) and **multi-GPU** (using `diffusion_2D_perf_multixpu.jl` on 4 GPU nodes) execution, we compare runs using the same problem size and parameters. The multi-GPU setup partitions the domain across multiple GPUs, enabling parallel computation with inter-xPU communication, while the single-GPU run processes the entire domain locally. 
 
-<table style="width: 90%; table-layout: fixed; border-collapse: collapse;">
+<table style="width: 80%; table-layout: fixed; border-collapse: collapse;">
   <tr>
     <td align="center">
       <img src="./gifs/diffusion_2D_mxpu_task3.gif" alt="Diffusion Animation - Task 3" width="450">
