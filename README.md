@@ -35,20 +35,25 @@ where:
 The implementation employs **finite differences** for spatial discretization:
 
 1. **Flux Calculation:**
-   - The fluxes in the $x$- and $y$- directions are discretized as:
-   $$
-   q_x(i, j) = -D \frac{C_{i+1,j} - C_{i,j}}{\Delta x}
-   $$
-   $$
-   q_y(i, j) = -D \frac{C_{i,j+1} - C_{i,j}}{\Delta y}
-   $$
+   - The fluxes in the $x$- and $y$- directions are discretized as:  
+
+$$
+q_x(i, j) = -D \frac{C_{i+1,j} - C_{i,j}}{\Delta x}
+$$
+
+$$
+q_y(i, j) = -D \frac{C_{i,j+1} - C_{i,j}}{\Delta y}
+$$
 
 2. **Divergence of Flux (FVM Approximation):**
    - Using **conservation form**, the update step for $C$ is:
-   $$
-   C_{i,j}^{n+1} = C_{i,j}^{n} - \Delta t \left[ \frac{q_x(i+1, j) - q_x(i, j)}{\Delta x} + \frac{q_y(i, j+1) - q_y(i, j)}{\Delta y} \right]
-   $$
-   where $\Delta t$ is determined by the CFL condition.
+
+ $$
+ C_{i,j}^{n+1} = C_{i,j}^{n} - \Delta t \left[ \frac{q_x(i+1, j) - q_x(i, j)}{\Delta x} + \frac{q_y(i, j+1) - q_y(i, j)}{\Delta y} \right]
+ $$
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where $\Delta t$ is determined by the CFL condition.
 
 
 ## **Parallelization and Communication Hiding**
