@@ -1,7 +1,7 @@
 # Multi-xPU 2D Diffusion Solver
 
 
-The project implements a **2D diffusion equation** solver in **Julia** using **ImplicitGlobalGrid.jl** and **ParallelStencil.jl**. The solver is designed for **multi-xPU parallelized execution** to achieve high-performance, scalable simulation of a pure diffusion process by solving the time evolution of an initial Gaussian concentration distribution. The project was implemented and tested on **Piz Daint** multi-xPU nodes provided by **CSCS**, as part of the course **"Solving Partial Differential Equations in Parallel on Graphic Processing Units"** at **ETH Zürich**.
+The project implements a **2D diffusion equation** solver in **Julia** using **ImplicitGlobalGrid.jl** and **ParallelStencil.jl**. The solver is designed for **multi-xPU parallelized execution** to achieve high-performance, scalable simulation of a pure diffusion process by solving the time evolution of an initial Gaussian concentration distribution. The project was implemented and tested on [**Piz Daint**](https://www.cscs.ch/computers/piz-daint/) multi-xPU nodes provided by the **Swiss National Supercomputing Centre (CSCS)**, as part of the course **"Solving Partial Differential Equations in Parallel on Graphic Processing Units"** at **ETH Zürich**.
 
 The governing partial differential equation (PDE) for the simulation is:
 
